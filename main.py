@@ -37,8 +37,10 @@ def get_age(message):
 
 def answer(message):
     if message.text == 'да':
-        bot.send_message(message.from_user.id, f'Олично, тогда продлжаем', )
-        bot.send_message(message.from_user.id, f'{name}, Какую профессию выбираете?')
+        bot.send_message(message.from_user.id, f'Олично, тогда продлжаем\n'
+                                               f'Загружаем профессии...')
+        sleep(2)
+        bot.send_message(message.from_user.id, f'{name}, Профессии загрузились')
         for i_prof, y_prof in enumerate(profession):
             sleep(1)
             bot.send_message(message.from_user.id, f'{i_prof + 1} - {y_prof}')
